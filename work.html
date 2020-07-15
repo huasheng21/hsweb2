@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>作品记录</title>
+	<style>
+		body{
+	        display: flex;
+		}
+		ul{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: visible;
+			position: fixed;
+			width: 100%;
+			background-color:black;
+			z-index: 10000;
+			top: 0;
+			left: 0;
+			right: 0;
+			border-top: 2px solid white;
+		}
+		li{
+			float:left;
+		}
+		li a{
+			display: inline-block;
+			color: white;
+			text-align: center;
+			font-family: "等线";
+			padding:20px 100px;
+			text-decoration: none;
+			font-size: 15px;
+		}
+		li a:hover{
+			background-color:#BDBDBD;
+			color:#383838;
+		}
+		table.myTable{
+			margin: 110px auto;
+			width: 80%;
+			border: 5px solid black;
+			border-collapse: collapse;
+		}
+		th,td{
+			text-align: center;
+			border: 5px solid black;
+			padding: 12px;
+			border:border-box;
+			background-color:white;
+			font-family: "等线";
+		}
+		th:hover,td:hover{
+			background-color: #C2C2C2;
+		}
+		#special{
+			background-color: black;
+			color: white;
+		}
+		
+		.skill{
+			margin: auto;
+			width: 80%;
+		}
+		.photo1{
+			position: absolute;
+			top: 500px;
+			left: 30%;
+			border: 5px solid black;
+		}
+		.picture{
+			position: absolute;
+			top: 1100px;
+			left: 5%;
+			border: 5px solid black;
+		}
+		.Aus{
+			position: absolute;
+			top: 520px;
+			left: 85%;
+			height: 30px;
+			background-color:rgba(57,57,57,0.5);
+			padding: 10px;
+			border-radius: 20px;
+			font-size: 2em;
+			color: white;
+			border: 3px solid white;
+		}
+		.pic{
+			position: absolute;
+			top: 1120px;
+			left: 7%;
+			height: 30px;
+			background-color:rgba(57,57,57,0.5);
+			padding: 10px;
+			border-radius: 20px;
+			font-size: 2em;
+			color: white;
+			border: 3px solid rgba(51,51,51,0.89);
+		}
+		.ptWord{
+			position: absolute;
+			top: 520px;
+			left: 2%;
+			background-color:rgba(50,50,50,0.75);
+			padding: 40px;
+			border-radius: 20px;
+			font-size: 1.5em;
+			color: white;
+			font-family: "等线";
+		}
+		.picWord{
+			position: absolute;
+			top: 1120px;
+			left: 70%;
+			background-color:rgba(50,50,50,0.75);
+			padding: 40px;
+			border-radius: 20px;
+			font-size: 1.5em;
+			color: white;
+			font-family: "等线";
+		}
+		#cinema{
+			position: absolute;
+			top: 2200px;
+			left: 30%;
+			background-color:black;
+			color: white;
+			padding: 5px;
+			width: 500px;
+			height: 130px;
+			font-size: 2em;
+			text-align: center;
+			border-radius: 80px;
+			font-family: "等线";
+		}
+		p::before{
+			content: url(电影UI.png);
+		}
+		#film{
+			position: absolute;
+			top: 2400px;
+			left: 20%;
+			border: 5px solid black;
+			visibility: hidden;
+		}
+	</style>
+</head>
+
+<body>
+	<ul>
+		<li><a href="index.html">个人主页</a></li>
+		<li><a href="life.html">校园生活</a></li>
+		<li><a href="work.html">作品记录</a></li>
+		<li><a href="contact.html">联系方式</a></li>
+	</ul>
+	
+	<div class="skill"><table class="myTable">
+		<tr>
+			<th colspan="4" id="special">花生技能表</th>
+		</tr>
+		<tr>
+			<th>技能名</th>
+			<th>熟练度</th>
+			<th>掌握时长</th>
+			<th>兴趣度</th>
+		</tr>
+		<tr>
+			<td>绘画</td>
+			<td>★★★★</td>
+			<td>★★★★★</td>
+			<td>★★★★★</td>
+		</tr>
+		<tr>
+			<td>摄影</td>
+			<td>★★</td>
+			<td>★★</td>
+			<td>★★★★</td>
+		</tr>
+	</table>
+	</div>
+	<div class="photo1">
+		<img alt="摄影作品" src="作品记录/摄影1.jpg" id="mypt">
+	</div>
+	<div class="Aus" onClick="step()">···</div>
+	<div class="ptWord">
+	一场另一个大陆的旅行<br><br>气味交织的农场<br><br>云层极低的天空<br><br>静悄悄的红树林<br><br>水天一色的海滨
+	</div>
+	
+	<div class="picture">
+		<img alt="绘画作品" src="作品记录/画1.jpg" id="myPic">
+	</div>
+	<div class="pic" onClick="oStep()">···</div>
+	<div class="picWord">
+	低产画手<br><br>课程作业<br><br>一时兴起<br><br>生日贺图<br><br>摸鱼涂鸦选手
+	</div>
+	<div id="cinema" onClick="play()"><p>点击进入放映厅</p></div>
+	<div id="film">
+		<video width="800px" poster="作品记录/封面.png" controls="controls">
+		<source src="作品记录/AE动画.mp4" type="video/mp4"></video>
+	</div>
+	
+	<script>
+	var num=1;
+	function step(){
+		if(num < 4){
+			num++;
+		}else{
+			num = 1;
+		}
+		var dom = document.getElementById("mypt");
+		dom.src = "作品记录/摄影"+ num + ".jpg";
+	}//参考图片走马灯完成的循环播放
+	var mun=1;
+	function oStep(){
+		if(mun < 4){
+			mun++;
+		}else{
+			mun = 1;
+		}
+		var dom2 = document.getElementById("myPic");
+		dom2.src = "作品记录/画"+ mun + ".jpg";
+	}
+	function play(){
+		var myCinema = document.getElementById("cinema");
+		var myFilm = document.getElementById("film");
+		myCinema.style.background = "gray";
+		myFilm.style.visibility = "visible";
+	}
+	</script>
+</body>
+</html>

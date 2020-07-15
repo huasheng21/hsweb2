@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>花生的个人网页</title>
+	<style>
+		body{
+	        display: flex;
+			font-family: "等线";
+		}
+		/*以下为导航栏样式*/
+		ul{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: visible;
+			position: fixed;
+			width: 100%;
+			background-color:black;
+			z-index: 10000;
+			top: 0;
+			left: 0;
+			right: 0;
+			border-top: 2px solid white;
+		}
+		li{
+			float:left;
+		}
+		li a{
+			display: inline-block;
+			color: white;
+			text-align: center;
+			padding:20px 100px;
+			text-decoration: none;
+			font-size: 15px;
+		}
+		li a:hover{
+			background-color:#BDBDBD;
+			color:#383838;
+		}
+		/*以上为导航栏样式*/
+		.out1{
+		margin-top: 200px;
+		width: 100%;
+		}
+		.insideLanguage{
+			background-color: black;
+			color: white;
+			width: 80px;
+			padding:1px 20px;
+			margin: 10px;
+			text-align: center;
+		}
+		.insideLanguage:hover{
+			background-color:#9C9C9C;
+		}
+		.outerlanguage{
+			float: left;
+			margin-left: 80px;
+		}
+		.ohBorder1{
+			width:800px;
+			float: left;
+			position: absolute;
+			left:250px;
+		}
+		#ohBorder2{
+			width:800px;
+			position: absolute;
+			left:250px;
+			top:900px;
+		}
+		#introduce{
+			padding-top: 30px;
+			writing-mode: tb-rl;
+			width:330px;
+			height: 450px;
+			position: absolute;
+			left:150px;
+			top:850px;
+			background-color:rgba(76,76,76,0.58);
+			color: white;
+			font-size: 1.5em;
+			visibility: hidden;
+		}
+		#hello{
+			writing-mode: tb-rl;
+			font-size: 2.5em;
+			position: absolute;
+			left:350px;
+			top: 350px;
+		}	
+		</style>
+</head>
+
+<body>
+	<!--导航栏-->
+	<ul>
+		<li><a href="index.html">个人主页</a></li>
+		<li><a href="life.html">校园生活</a></li>
+		<li><a href="work.html">作品记录</a></li>
+		<li><a href="contact.html">联系方式</a></li>
+	</ul>
+	
+	<div class="out1">
+	<div class="outerlanguage">
+		<div class="insideLanguage" onClick="toChinese()"><p>中文</p></div>
+		<div class="insideLanguage" onClick="toEnglish()"><p>English</p></div>
+		<div class="insideLanguage" onClick="toJapanese()"><p>日本語</p></div>
+	</div>
+	
+	<img class="ohBorder1" src="人物1.jpg" alt="你好呀">
+	
+	<div id="hello">
+		<p>欢迎！</p>
+	</div>
+	
+	</div>	
+	
+	<img id="ohBorder2" src="人物2-1.jpg" alt="听我介绍" onMouseOver="changeimg()" onMouseOut="reset()">
+	
+	<div id="introduce">
+	<br><br>花生，二十岁<br><br>杭电传播学在读生<br><br>毕业于萧山三中<br><br>爱好和特长都是画画<br><br>目前在担心这个网页不够让你满意<br><br>
+	</div>
+	<br><br><br>
+	<script>
+		/*"欢迎"对话框的语言切换*/
+		function toChinese(){
+			var language = document.getElementById("hello");
+			language.innerHTML = "欢迎！";
+		}
+		function toEnglish(){
+			var language = document.getElementById("hello");
+			language.innerHTML = "Welcome!";
+		}
+		function toJapanese(){
+			var language = document.getElementById("hello");
+			language.innerHTML = "待ってたよ！";
+		}
+		
+		function changeimg(){
+			var pic = document.getElementById("ohBorder2");
+			var intro = document.getElementById("introduce");
+			pic.src = "人物2-2.jpg";
+			intro.style.visibility = "visible";/*使鼠标悬停时表情变化并出现文字*/
+		}
+		function reset(){
+			var pic = document.getElementById("ohBorder2");
+			var intro = document.getElementById("introduce");
+			pic.src = "人物2-1.jpg";
+			intro.style.visibility = "hidden";
+		}
+		
+	</script>
+</body>
+</html>

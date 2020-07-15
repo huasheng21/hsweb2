@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>校园生活</title>
+	<style>
+		ul{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: visible;
+			position: fixed;
+			width: 100%;
+			background-color:black;
+			z-index: 10000;
+			top: 0;
+			left: 0;
+			right: 0;
+			border-top: 2px solid white;
+		}
+		li{
+			float:left;
+		}
+		li a{
+			display: inline-block;
+			color: white;
+			text-align: center;
+			font-family: "等线";
+			padding:20px 100px;
+			text-decoration: none;
+			font-size: 15px;
+		}
+		li a:hover{
+			background-color:#BDBDBD;
+			color:#383838;
+		}
+		.help{
+			margin: 50px;
+			color: #FFFFFF;
+			
+		}
+		.ziliao{
+			margin: 80px auto 0px;
+			display: block;
+			background-color: black;
+			color: white;
+			text-align: center;
+	        width: 200px;
+			padding: 10px;
+			font-size: 1.5em;
+			font-family: "等线";
+		}
+		iframe{
+			margin: 5px auto 0px;
+			width: 800px;
+			height:600px;
+			border: 5px solid black;
+			display: block;
+		}
+		#pics{
+	width: 100%;
+    height: 500px;
+    background-color: black;
+	margin: 0;
+   font-family: "等线";
+    }
+    #pics div{
+    float: left;
+    width: 200px;
+    height: 500px;
+    line-height: 500px;
+    font-size: 30px;
+    transition: width 0.5s;
+    }
+    #pics div:hover{
+    width: 600px;
+    transition: width 0.5s;
+    }
+ .sakura{background: url("校园生活/校园1.jpg");}
+ .cocacola{background: url(校园生活/校园2.jpg);}
+ .xuehuo{background: url(校园生活/校园3.jpg);}
+		</style>
+</head>
+
+<body>
+	<ul>
+		<li><a href="index.html">个人主页</a></li>
+		<li><a href="life.html">校园生活</a></li>
+		<li><a href="work.html">作品记录</a></li>
+		<li><a href="contact.html">联系方式</a></li>
+	</ul>
+	<br><br><br><br><br><br>
+    <div id="pics">
+            <div class="xuehuo"></div>
+            <div class="cocacola"></div>
+            <div class="sakura"></div>
+		    <div class="help">某一天于校园</div>
+    </div>
+    <div>
+	<p class="ziliao">梦回高中</p>
+	<iframe src="https://www.bilibili.com/video/BV1gs411Y7SX?from=search&seid=14787367144096323532">
+	</iframe>
+	</div>
+</body>
+</html>
